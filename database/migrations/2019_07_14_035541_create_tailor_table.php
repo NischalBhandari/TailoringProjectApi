@@ -21,6 +21,9 @@ class CreateTailorTable extends Migration
             $table -> string('quality');
             $table -> float('price');
             $table -> string('material');
+/*            Schema::table('tailorClothes',function($table){
+                $table -> string('basePhoto');
+            });*/
 
             $table->timestamps();
         });

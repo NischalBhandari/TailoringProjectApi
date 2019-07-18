@@ -22,7 +22,8 @@ class Clothes extends Resource
             'texture' => $this->texture,
             'quality' => $this->quality,
             'price' => $this->quality,
-            'material' => $this->material
+            'material' => $this->material,
+            'basePhoto' => $this->basePhoto,
         ];
     }
     public function with($request)

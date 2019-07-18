@@ -31,6 +31,7 @@ $factory->define(App\tailorclothes::class,function(Faker\Generator $faker)
 		'quality' => $faker->text(50),
 		'price' => $faker->randomNumber(4),
 		'material'=> $faker -> text(50),
+		'photoBase' => $faker -> text(200),
 
 			];
 }

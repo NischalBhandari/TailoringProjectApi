@@ -32,6 +32,7 @@ class ClothesController extends Controller
         //
     }
 
+
     /**
      * Store a newly created resource in storage.
      *
@@ -48,10 +49,23 @@ class ClothesController extends Controller
         $clothes->quality=$request->input('quality');
         $clothes->price=$request->input('price');
         $clothes->material=$request->input('material');
+        $clothes->basePhoto = $request -> input('basePhoto');
+        $name = $request -> input('race');
+        
+        $name = str_replace('data:image/png;base64','',$name);
+        
+
+        $name = str_replace('','+',$name);
+        $imageName= str_random(10).'.'.'png';
+        \File::put(storage_path('app').'/'.$imageName,base64_decode($name));
+        error_log(storage_path());
+        $clothes->name=$imageName;
 
 
         if($clothes->save()){
             return new ClothesResource($clothes);
+            info('The $name has been put');
+
         }
     }
 
