@@ -41,6 +41,7 @@ class ClothesController extends Controller
      */
     public function store(Request $request)
     {
+    
         $clothes=$request->isMethod('put') ? tailorclothes::findOrFail($request->clothes_id): new tailorclothes;
         $clothes->id=$request->input('clothes_id');
         $clothes->name=$request->input('name');

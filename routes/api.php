@@ -17,6 +17,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::group(['middleware' => 'auth:api'], function() {
+
 //list clothes
 Route::get('showclothes','ClothesController@index');
 // list single clothes 
@@ -27,3 +29,4 @@ Route::post('showclothes','ClothesController@store');
 Route::put('showclothes','ClothesController@store');
 //delete 
 Route::delete('showclothes/{id}','ClothesController@destroy');
+});
