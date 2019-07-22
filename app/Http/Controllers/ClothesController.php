@@ -58,7 +58,7 @@ class ClothesController extends Controller
 
         $name = str_replace('','+',$name);
         $imageName= str_random(10).'.'.'png';
-        \File::put(storage_path('app').'/'.$imageName,base64_decode($name));
+        \File::put(storage_path('app/public').'/'.$imageName,base64_decode($name));
         error_log(storage_path());
         $clothes->name=$imageName;
 
